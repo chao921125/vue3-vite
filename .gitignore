@@ -1,7 +1,10 @@
 .DS_Store
 node_modules
 /dist
-yarn.lock
+
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+test/upload-server/static
 
 # local env files
 .env.local
@@ -9,9 +12,9 @@ yarn.lock
 
 # Log files
 npm-debug.log*
-npm-error.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # Editor directories and files
 .idea
@@ -21,4 +24,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
+dist
+.npmrc
+.cache
+.local

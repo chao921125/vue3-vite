@@ -1,10 +1,13 @@
 /**
  * 参考链接: https://github.com/vitejs/vite/blob/master/src/node/config.ts
  */
-import path from 'path'
-import dotenv from 'dotenv'
+import type { UserConfig, Resolver, loadEnv } from 'vite';
+import { resolve } from 'path'
+
+const pkg = require('./package.json');
 
 // 配置全局
+let __dirname = path.join;
 dotenv.config({ path: path.join(__dirname, '.env') })
 
 // const path = require('path')
@@ -54,7 +57,7 @@ module.exports = {
     // 为开发服务器配置自定义代理规则。
     proxy: {
         '/api': {
-        target: '127.0.0.1:8080',
+        target: '127.0.0.1:8089',
         changeOrigin: true,
         rewrite: (path: string) => path.replace(/^\/api/, '')
         }
@@ -76,11 +79,11 @@ module.exports = {
       plugins: [
         {
           name: '@rollup/plugin-commonjs',
-          transform(code, filename) {
+          transform(code: string, filename: string | string[]) {
             if (filename.includes(`/node_modules/`)) {
               return code
             }
-  
+
             const cjsRegexp = /(const|let|var)[\n\s]+(\w+)[\n\s]*=[\n\s]*require\(["|'](.+)["|']\)/g
             const res = code.match(cjsRegexp)
             if (res) {
