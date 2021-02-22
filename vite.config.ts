@@ -1,14 +1,20 @@
 /**
  * 参考链接: https://github.com/vitejs/vite/blob/master/src/node/config.ts
  */
-import { defineConfig } from 'vite'
+import type { UserConfig, ConfigEnv } from 'vite';
+
+import { loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue'
 import path from 'path';
 console.log(path.resolve(__dirname, './src'))
-console.log(process['env']);
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default ({ mode }: ConfigEnv): UserConfig  => {
+  const root = process.cwd();
+
+  const env = loadEnv(mode, root);
+
+  return {
   // root: 'index.html', // 入口
   base: './', // 公共基础路径
   // mode: 'development', // 指令覆盖构建模式 --mode
@@ -71,7 +77,7 @@ export default defineConfig({
   clearScreen: true, // --clearScreen
   server: {
     // host: 'localhost',
-    port: process.env.VITE_PORT,
+    port: env.VITE_PORT,
     // strictPort: true, // 存在冲突端口，则继续下找可用端口
     // https: '', // boolean | https.ServerOptions
     // open: '', // boolean | string
@@ -127,4 +133,5 @@ export default defineConfig({
   //   external: '',
   //   noExternal: '',
   // },
-})
+  }
+}
