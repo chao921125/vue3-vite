@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path';
 console.log(path.resolve(__dirname, './src'))
-
+console.log(process['env']);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -53,9 +53,9 @@ export default defineConfig({
     // modules: '',
     // postcss: '',
     preprocessorOptions: {
-      // scss: {
-      //   additionalData: `$injectedColor: orange;`
-      // }
+      scss: {
+        additionalData: `@import "~@assets/styles/public.scss";`,
+      }
     },
   },
   // json: {
