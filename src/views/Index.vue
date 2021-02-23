@@ -1,6 +1,6 @@
 <template>
     <div class="test_two_box">
-        <video id="myVideo" class="video-js" width="100%" height="100%">
+        <video id="myVideo" class="video-js" width="100%" height="100%" webkit-playsinline playsinline x5-playsinline x5-video-player>
             <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
             <p class="vjs-no-js">不支持播放</p>
         </video>
