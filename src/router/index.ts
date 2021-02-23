@@ -2,9 +2,13 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
+    path: "",
+    redirect: '/index',
+  },
+  {
     path: "/",
     name: "/",
-    redirect: '/home',
+    redirect: '/index',
   },
   {
     path: "/index",
@@ -24,7 +28,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 });
 
