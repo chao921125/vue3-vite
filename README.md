@@ -1,3 +1,11 @@
+# Update
+
+期待vite能更好。
+
+但很有可能会被vue-cli实现当前的优点，从而提高本地开发效率。
+
+又或者被snowpack干掉。
+
 # Vue 3 + Typescript + Vite
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.
