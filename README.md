@@ -6,6 +6,10 @@
 
 又或者被snowpack干掉。
 
+# Attention
+
+请尽量使用yarn install，npm install可能会出现一些问题。
+
 # Vue 3 + Typescript + Vite
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.
