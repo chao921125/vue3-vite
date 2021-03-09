@@ -82,6 +82,8 @@ export default ({ mode }: ConfigEnv): UserConfig  => {
       },
       preprocessorOptions: {
         less: {
+        },
+        scss: {
         }
       },
     },
